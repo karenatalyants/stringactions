@@ -5,18 +5,17 @@ const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 ];
 
 function letterAfter(string, letter) {
-  var letterIndex = alphabet.indexOf(letter);
   var resultLetters = [];
   for (let i = 0; i < string.length; i++) {
-    if (alphabet.indexOf(string[i]) > letterIndex && resultLetters.includes(string[i]) === false) {
+    if (alphabet.indexOf(string[i]) > alphabet.indexOf(letter) && resultLetters.includes(string[i]) === false) {
       resultLetters.push(string[i]);
     }
   }
   if (resultLetters.length > 0) {
-    console.log(`The letters that are contained in string ${string} and are after letter ${letter} in the English alphabet are ${resultLetters}`);
+    console.log(`The letters that are contained in string ${string} and are after letter ${letter} in the English alphabet are ${resultLetters}.`);
   } else {
-    console.log(`There are no letters in the string ${string} that are positioned after letter ${letter} in the English alphabet`);
+    console.log(`There are no letters in the string ${string} that are positioned after letter ${letter} in the English alphabet.`);
   }
 }
 
-letterAfter("babacabdeh", "h");
+letterAfter("suchawonderfullife", "c");
