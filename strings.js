@@ -24,10 +24,10 @@ const occur = function(string1, string2) {
 
   for (let position = 0; position < string1.length; position++) {
 
-    if (string2[a] == string1[position]) {
+    if (string2[a] === string1[position]) {
       a = a + 1;
       hit = hit + 1;
-    } else if (string2[0] == string1[position]) {
+    } else if (string2[0] === string1[position]) {
       hit = 1;
       a = 1;
     } else {
@@ -45,6 +45,27 @@ const occur = function(string1, string2) {
 
 occur("x6XcxHJNr6dC99NjUxLy2nyFpY8edfclsf37psrauQ0bdBpN9FnVCJQmDhZaGbs33NgK7wHdtpdmorVUxwlqBt5gszYklVZ", "x");
 console.log(occurence);
+
+
+
+/// or
+
+
+const occur = function(string1, string2) {
+  let occurences = [];
+  let a = string1.indexOf(string2);
+
+  while (a !== -1) {
+    occurences.push(a);
+    //  x = a + 1 + string2.length;
+    a = string1.indexOf(string2, a + 1);
+  }
+
+  console.log(occurences);
+  return occurences;
+}
+
+occur("abrakadabra", "abr");
 
 // b. Given 2 strings, establish if the second is a reflection of the first.
 // A reflection is defined (in this case) as a reversal, i.e, 'cba' is the reflection of 'abc'.
@@ -82,9 +103,52 @@ reflection("abc", "CBA");
 
 //c. Given a string, find all the words (a word is separated by spaces) that can be made out of it.
 
+const wordFinder = function(string) {
+  let wordCount = 0;
+  let spaceCount = 0;
+
+  for (let a = 0; a < string.length; a++) {
+    if
+    if (string[a] === " ") {
+
+    }
+  }
+
+
+}
+
 
 
 //d. Given a string and a character, find all occurances of the character in the string.
+
+
+const charOccur = function(string, char) {
+
+  let charOccurence = 0;
+
+
+  for (let position = 0; position < string.length; position++) {
+    if (string[position] === char) {
+      charOccurence = charOccurence + 1;
+    }
+  }
+  console.log(charOccurence);
+}
+
+charOccur("abrakadabra", "b")
+
+
+// OR using indexOf();
+
+const charOccurenceIo = function(string, char) {
+  var a = string.indexOf(char);
+  console.log(a);
+}
+
+charOccurenceIo("bumbarabum", "b");
+
+
+
 
 
 
@@ -97,6 +161,7 @@ let letterOccurence = 0;
 let checkedPool = "";
 
 const letterOccur = function(string) {
+
   const wasChecked = function(position) {
     let checked = false;
     for (let c = 0; c < position; c++) {
@@ -137,12 +202,14 @@ letterOccur("abrakadabra");
 
 const charSetComparer = function(string1, string2) {
 
+
   if (string1.length != string2.length) {
     console.log("Can't check for strings that are not equal in length");
     return;
   }
 
   for (let a = 0; a < string1.length; a++) {
+
 
 
 
