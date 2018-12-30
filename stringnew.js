@@ -9,7 +9,10 @@ const alphabet = alph.split(/(?=[\s\S])/u);
 // this is the function
 function letterAfter(string, letter) {
 
-  // empty array
+  // make the string lowercase entirely
+  string = string.toLowerCase();
+
+  // empty array which will contain the desired letters
   var resultLetters = [];
 
   // looping over the portion of the alphabet that stands after the specified letter, for every letter in the string
