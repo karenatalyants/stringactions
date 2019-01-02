@@ -1,8 +1,24 @@
 // report all the letters in a given string that are positioned after a given letter in the English alphabet
 
 
-// found an easier way to create an array with all the alphabet letters instead of manually typing it :D
-const alph = "abcdefghijklmnopqrstuvwxyz";
+// found an easier way to create an array with all the alphabet letters instead of manually typing it :D (updated)
+var alph = "";
+
+function alphabetCreator() {
+  // 97 is the unicode number of a
+  let firstLetter = 97;
+  // doing this 26 times
+  for (let i = 0; i < 26; i++) {
+    // using .fromCharCode to feed letter unicode numbers and get letters,
+    // and then adding the letters to the string alph, which will later be used to convert into an array
+    alph = alph + String.fromCharCode(firstLetter);
+    firstLetter = firstLetter + 1;
+  }
+  return alph;
+}
+
+alphabetCreator();
+
 const alphabet = alph.split(/(?=[\s\S])/u);
 
 
